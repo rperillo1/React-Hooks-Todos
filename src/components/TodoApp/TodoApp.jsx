@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar"
 import ToolBar from "@material-ui/core/ToolBar"
 import Grid from "@material-ui/core/Grid"
 import TodoList from '../TodosList/TodosList'
+import TodoForm from "../TodoForm/TodoForm"
 
 
 function TodoApp() {
@@ -29,6 +30,7 @@ function TodoApp() {
                 <Typography color='inherit'>TODOS WITH HOOKS</Typography>
             </ToolBar>
         </AppBar>
+        <TodoForm />
         <TodoList todos={todos}/>
         </Paper>
     )
