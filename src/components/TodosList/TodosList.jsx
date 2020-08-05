@@ -8,7 +8,7 @@ function TodosList(props) {
     return (
         <Paper>
             <List>
-                {props.todos.map(todo =>
+                {props.todos.map((todo, i) =>
                     <>
                         <Todo 
                         task={todo.task} 
@@ -20,7 +20,9 @@ function TodosList(props) {
                         editTodo={props.editTodo}
                         >
                         </Todo>
+                        {i < (props.todos.length -1) ? 
                         <Divider />
+                        : "" }
                     </>
                 )}
             </List>
