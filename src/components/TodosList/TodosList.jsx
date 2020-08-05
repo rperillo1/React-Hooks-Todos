@@ -10,8 +10,14 @@ function TodosList(props) {
             <List>
                 {props.todos.map(todo =>
                     <>
-
-                        <Todo task={todo.task} key={todo.id} completed={todo.completed}></Todo>
+                        <Todo 
+                        task={todo.task} 
+                        id={todo.id} 
+                        key={todo.id} 
+                        completed={todo.completed}
+                        removeTodo={props.removeTodo}
+                        >
+                        </Todo>
                         <Divider />
                     </>
                 )}

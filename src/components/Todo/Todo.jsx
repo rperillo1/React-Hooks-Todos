@@ -14,8 +14,8 @@ function Todo(props) {
             <Checkbox tabIndex={-1} checked={props.completed}></Checkbox>
             <ListItemText style={{ textDecoration: props.completed ? "line-through" : ''}}>{props.task}</ListItemText>
                 <ListItemSecondaryAction>
-                    <IconButton aria-label="Delete">
-                        <DeleteIcon/>
+                    <IconButton aria-label="Delete" onClick={() => props.removeTodo(props.id)}>
+                        <DeleteIcon />
                     </IconButton>
                     <IconButton aria-label="Edit">
                         <EditIcon/>
