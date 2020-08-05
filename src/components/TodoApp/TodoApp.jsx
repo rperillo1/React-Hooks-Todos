@@ -10,32 +10,37 @@ import TodoForm from "../TodoForm/TodoForm"
 
 function TodoApp() {
     const initialTodos = [
-        { id:1, task: 'clean fish tank', completed: false},
-        { id:2, task: 'wash car', completed: true},
-        { id:3, task: 'feed dog', completed: false},
+        { id: 1, task: 'clean fish tank', completed: false },
+        { id: 2, task: 'wash car', completed: true },
+        { id: 3, task: 'feed dog', completed: false },
     ]
     const [todos, setTodos] = useState(initialTodos)
 
     const addTodo = newTodoText => {
-        setTodos([...todos, {id: 4, task: newTodoText, completed: false}])
+        setTodos([...todos, { id: 4, task: newTodoText, completed: false }])
     }
 
-    return(
+    return (
         <Paper style={{
             padding: 0,
             margin: 0,
             height: "100vh",
             backgroundColor: "eggshell"
         }}
-        elevation={0}
+            elevation={0}
         >
-        <AppBar color='primary' position='static' style={{ height: "64px"}}>
-            <ToolBar>
-                <Typography color='inherit'>TODOS WITH HOOKS</Typography>
-            </ToolBar>
-        </AppBar>
-        <TodoForm addTodo={addTodo}/>
-        <TodoList todos={todos}/>
+            <AppBar color='primary' position='static' style={{ height: "64px" }}>
+                <ToolBar>
+                    <Typography color='inherit'>TODOS WITH HOOKS</Typography>
+                </ToolBar>
+            </AppBar>
+            <Grid container justify="center" style={{marginTop: "1.5rem"}}>
+                <Grid item xs={11} md={8} lg={4}>
+                    <TodoForm addTodo={addTodo} />
+                    <TodoList todos={todos} />
+                </Grid>
+            </Grid>
+
         </Paper>
     )
 }
