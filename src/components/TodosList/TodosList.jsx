@@ -6,25 +6,25 @@ import Todo from '../Todo/Todo'
 import { TodosContext } from "../../contexts/todos.context"
 
 function TodosList() {
-    const { todos } = useContext(TodosContext)
+    const todos = useContext(TodosContext)
 
     if (todos.length)
-    return (
-        <Paper>
-            <List>
-                {todos.map((todo, i) =>
-                    <>
-                        <Todo 
-                        {...todo} 
-                        key={todo.id} 
-                        >
-                        </Todo>
-                        {i < (todos.length -1) && <Divider /> }
-                    </>
-                )}
-            </List>
-        </Paper>
-    )
+        return (
+            <Paper>
+                <List>
+                    {todos.map((todo, i) =>
+                        <React.Fragment key={i}>
+                            <Todo
+                                {...todo}
+                                key={todo.id}
+                            >
+                            </Todo>
+                            {i < (todos.length - 1) && <Divider />}
+                            </React.Fragment>
+                    )}
+                </List>
+            </Paper>
+        )
     return null;
 }
 
